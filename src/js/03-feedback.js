@@ -24,13 +24,20 @@ function onInputValue(e) {
 function fillContactFormElements() {
     const userDataFromLS = JSON.parse(localStorage.getItem(LOCAL_KEY));
     console.log(userDataFromLS);
-        for (const prop in userDataFromLS) {
-            if (userDataFromLS.hasOwnProperty(prop)) {
-                 console.log(prop);
+        // for (const prop in userDataFromLS) {
+        //     if (userDataFromLS.hasOwnProperty(prop)) {
+        //          console.log(prop);
 
-            form.elements[prop].value = userDataFromLS[prop];
+        //     form.elements[prop].value = userDataFromLS[prop];
+        //     }
+        // }
+
+        for (let key of form) {
+            if (userDataFromLS.hasOwnProperty(key.name)) {
+                userData[key.name] = key.value = userDataFromLS[key.name];
             }
-        }
+          }
+
     };
 
 fillContactFormElements();
