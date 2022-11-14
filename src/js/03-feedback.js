@@ -48,5 +48,6 @@ function onContactFormSubmit (event) {
   
     event.currentTarget.reset();
     form = {};
+    userData = {};
     localStorage.removeItem(LOCAL_KEY);
   };
